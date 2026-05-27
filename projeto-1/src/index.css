@@ -1,0 +1,231 @@
+/* Importando uma fonte mais moderna e limpa */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+:root {
+  --bg-dark: #020617;
+  --bg-card: #0f172a;
+  --primary: #38bdf8;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* A MÁGICA DA ROLAGEM SUAVE ESTÁ AQUI */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Navbar Estilo Glassmorphism */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 10%;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px); /* Efeito de vidro embaçado */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.navbar h1 span { color: var(--primary); }
+
+.navbar ul { 
+  display: flex; 
+  list-style: none; 
+  gap: 2.5rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.navbar ul li a:hover {
+  color: var(--primary);
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* Hero Section - Impacto Visual */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%;
+  background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+}
+
+.hero h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #fff, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+  padding: 1rem 2.5rem;
+  background: var(--primary);
+  color: var(--bg-dark);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 800;
+  transition: var(--transition);
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -10px rgba(56, 189, 248, 0.6);
+}
+
+/* Seções Gerais */
+.section {
+  padding: 100px 10%;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-grid span {
+  background: var(--bg-card);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.skills-grid span:hover {
+  border-color: var(--primary);
+  background: rgba(56, 189, 248, 0.05);
+  transform: scale(1.05);
+}
+
+/* Projetos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 { margin-bottom: 1rem; color: var(--primary); }
+
+.card p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Footer Profissional */
+.footer {
+  background: #010409;
+  padding: 80px 10% 40px;
+  text-align: center;
+}
+
+.social-links {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  padding: 10px 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  color: var(--bg-dark);
+}
+
+/* Responsividade total */
+@media (max-width: 768px) {
+  .navbar { padding: 1rem 5%; }
+  .navbar ul { display: none; } /* Em um projeto real aqui faríamos um menu hamburguer */
+  .section { padding: 60px 5%; }
+  .hero h2 { font-size: 2.2rem; }
+}

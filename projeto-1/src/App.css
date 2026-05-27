@@ -1,0 +1,89 @@
+/* RESET: Remove margens padrão do navegador e define a fonte */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ESTILO GLOBAL: Define cores de fundo e texto (Dark Mode) */
+body {
+  background-color: #0f172a; /* Azul muito escuro */
+  color: #f8fafc; /* Branco acinzentado */
+  line-height: 1.6;
+}
+
+/* NAVBAR: Fixada no topo para facilitar a navegação */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 10%;
+  background: #1e293b; /* Tom levemente mais claro que o fundo */
+  position: sticky; /* Faz a barra "grudar" no topo ao rolar */
+  top: 0;
+  z-index: 100;
+}
+
+/* HERO: Centraliza o texto de boas-vindas e dá destaque */
+.hero {
+  text-align: center;
+  padding: 100px 10%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* BOTÃO: Estilo do botão principal com a cor de destaque (Cyan) */
+.btn-primary {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: #38bdf8; /* Azul destaque */
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.2); /* Brilha um pouco ao passar o mouse */
+}
+
+/* GRID DE PROJETOS: Usa Grid Layout para organizar os cards */
+.projects-grid {
+  display: grid;
+  /* Cria colunas automáticas de no mínimo 250px */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* CARD DE PROJETO: Estilização de cada quadrado de projeto */
+.card {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  transition: transform 0.3s;
+}
+
+/* Efeito de levante ao passar o mouse no card */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+}
+
+/* RESPONSIVIDADE: Ajustes para telas de celular (até 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Empilha a logo e os links no mobile */
+    gap: 1rem;
+  }
+  
+  .navbar ul li {
+    margin: 0 10px;
+  }
+
+  .hero h2 {
+    font-size: 2rem; /* Diminui a fonte no celular */
+  }
+}
